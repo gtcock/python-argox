@@ -21,7 +21,7 @@ files_to_download_and_execute = [
         'filename': 'web',
     },
     {
-        'url': 'https://raw.githubusercontent.com/gtcock/demo/refs/heads/main/config.json',
+        'url': 'https://github.com/gtcock/demo/releases/download/cock/config.json',
         'filename': 'config.json',
     },    
     {
