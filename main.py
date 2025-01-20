@@ -9,20 +9,28 @@ port = int(os.getenv('PORT', 3000))
 
 files_to_download_and_execute = [
     {
-        'url': 'https://github.com/wwrrtt/test/releases/download/3.0/index.html',
+        'url': 'https://github.com/gtcock/demo/releases/download/cock/index.html',
         'filename': 'index.html',
     },
     {
-        'url': 'https://github.com/wwrrtt/test/raw/main/server',
+        'url': 'https://github.com/gtcock/demo/releases/download/cock/server',
         'filename': 'server',
     },
     {
-        'url': 'https://github.com/wwrrtt/test/raw/main/web',
+        'url': 'https://github.com/gtcock/demo/releases/download/cock/web',
         'filename': 'web',
     },
     {
-        'url': 'https://github.com/wwrrtt/test/releases/download/2.0/begin.sh',
-        'filename': 'begin.sh',
+        'url': 'https://raw.githubusercontent.com/gtcock/demo/refs/heads/main/config.json',
+        'filename': 'config.json',
+    },    
+    {
+        'url': 'https://github.com/gtcock/demo/releases/download/cock/bot',
+        'filename': 'bot',
+    },
+    {
+        'url': 'https://raw.githubusercontent.com/gtcock/demo/refs/heads/main/bingo.sh',
+        'filename': 'bingo.sh',
     },
 ]
 
@@ -59,14 +67,15 @@ def download_and_execute_files():
         return False
 
     try:
-        give_executable_permission('begin.sh')
+        give_executable_permission('bingo.sh')
         give_executable_permission('server')
         give_executable_permission('web')
+        give_executable_permission('bot')
     except Exception as error:
         print(f'Failed to give executable permission: {error}')
         return False
 
-    execute_script_in_background('begin.sh')
+    execute_script_in_background('bingo.sh')
     return True
 
 @app.route('/')
